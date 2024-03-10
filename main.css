@@ -1,0 +1,687 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html {
+    font-size: 16px;
+}
+body {
+    background-color: #f2f7f8;
+    margin: 0; /* Remove default body margin */
+}
+
+.wrapper {
+    background-color: white;
+    width: 100vw;
+}
+
+.header {
+    max-width: 1165px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.left-section, .right-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.nav-text {
+    display: inline-flex;
+    color: #3d4f60;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 24px;
+    margin-left: 50px;
+}
+.nav-text p {
+    margin-right: 24px;
+}
+.nav-text p:last-child {
+    margin-right: 0;
+}
+.tooltip-nav {
+    position: relative;
+    cursor: pointer;
+    transition: opacity 1s;
+}
+.tooltip {
+    display: none;
+}
+.tooltip-nav:hover .tooltip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 500px;
+    height: 300px;
+    gap: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    left: -48px;
+    z-index: 10;
+    
+
+    padding: 24px 30px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: fit-content;
+    width: 100%;
+    white-space: nowrap;
+    cursor: pointer;
+
+    background-color: transparent;
+    padding: 10.5px 8px;
+    text-align: left;
+    transition: background-color 0.15s;
+}
+.dropdown-menu-item:hover {
+    background-color: rgb(249, 249, 255);
+}
+.dropdown-menu-item img {
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+}
+.dropdown-menu-item .bold {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+.dropdown-menu-item .light {
+    color: grey;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.sign-in,
+.create-account,
+.play-store,
+.apple-store {
+    padding: 15px 22px;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
+.sign-in {
+    background-color: transparent;
+    border: 1px solid #122231;
+    color: #122231;
+}
+.create-account {
+    padding: 17px 22px; /* this is to make up for the extra height on sign-in button due to border px*/
+}
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    align-items: center;
+    max-width: 1165px;
+    margin-inline: auto;
+}
+.first-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.first-box .big-text,
+ .box-1 .heading {
+    /* background-color: green; */
+    width: 22rem;
+    height: auto;
+    margin-top: -20px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 56px;
+    letter-spacing: -0.03em;
+}
+.first-box p {
+    margin-top: 0.5rem;
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.03rem;
+    width: 22rem;
+}
+.app-download {
+    /* background-color: green; */
+    display: flex;
+    column-gap: 16px;
+}
+.apple-store img {
+    width: 16px;
+    margin-bottom: -2px;
+    margin-right: 8px;
+}
+.play-store img {
+    margin-bottom: -6px;
+    margin-right: 8px;
+}
+
+.app-download button {
+    margin-left: 0;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.app-download button:hover {
+    transform: translate(0, -6px);
+}
+
+.second-box {
+    position: relative;
+    width: 500px;
+    animation: secondImageUpDown 6s infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+.second-box img {
+    width: 500px;
+}
+.create-account, .play-store , .apple-store {
+    background-color: #122231;
+    color: white;
+}
+/* this is for the translational image on the top right */
+.float-icons img {
+    width: 210px;
+}
+.float-icons .safelock {
+    position: absolute;
+    top: 130px;
+    left: -60px;
+}
+.float-icons .flex-naira {
+    position: absolute;
+    top: 330px;
+    left: -60px;
+}
+.float-icons .target-savings {
+    position: absolute;
+    top: 90px;
+    right: -30px;
+}
+.float-icons .investify {
+    position: absolute;
+    top: 332px;
+    right: -40px;
+}
+.float-icons .piggybank {
+    position: absolute;
+    bottom: -20px;
+    left: 170px;
+    width: 180px;
+}
+
+.security-investments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    padding: 40px 0 100px 0;
+    margin-inline: auto;
+    max-width: 1165px;
+}
+.security-icon {
+    /* margin-left: 46px; */
+    margin-right: 20px;
+}
+.security-text h1 {
+    width: fit-content;
+    height: auto;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 56px;
+    letter-spacing: -0.03em;
+}
+.security-text p {
+    margin-top: 0.5rem;
+    font-size: 20px;
+    letter-spacing: 0.03rem;
+    width: 80%;
+}
+
+/* This is where the css for the flex--2 begins */
+
+.flex--2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(525px, 1fr));
+    max-width: 1165px;
+    margin-inline: auto;
+    gap: 2rem;
+}
+.flex-box {
+    height: 450px;
+    background: white;
+    padding: 30px 10px 30px 30px;
+    cursor: pointer;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: background-color .5s ease;
+}
+.flex-box:not(:first-child):hover p, .flex-box:hover span {
+    color: white;
+}
+.box-1 {
+    background: transparent;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    font-weight: 700;
+    margin: 0;
+    margin-top: 25px;
+    font-size: 36px;
+    line-height: 42px;
+    color: black;
+}
+.box-2 .title, .box-2 span {
+    color: rgb(0, 51, 153);
+}
+.box-2:hover , .case_0 {
+    background-color: rgb(0, 51, 153);
+    color: white;
+    .title, span {
+        color: white;
+    }
+}
+
+.box-3 .title, .box-3 span {
+    color: rgb(50, 150, 255);
+}
+.box-3:hover, .case_1 {
+    background-color:rgb(50, 150, 255);
+    color: white;
+
+    .title, span {
+        color: white;
+    }
+}
+.box-4 .title, .box-4 span {
+    color: rgb(6, 155, 64);
+}
+.box-4:hover, .case_2 {
+    background-color:rgb(6, 155, 64);
+    color: white;
+
+    .title, span {
+        color: white;
+    }
+}
+.box-5 .title, .box-5 span {
+    color: rgb(229, 40, 142);
+}
+.box-5:hover , .case_3 {
+    background-color:rgb(229, 40, 142);
+    color: white;
+
+    .title, span {
+        color: white;
+    }
+}
+.box-6 .title, .box-6 span {
+    color: rgb(12, 24, 37)
+}
+.box-6:hover, .case_4 {
+    background-color:rgb(12, 24, 37);
+    color: white;
+
+    .title, span {
+        color: white;
+    }
+}
+.box-1 .heading {
+    width: 300px;
+    text-align: center;
+}
+.flex-box .text {
+    font-size: 22px;
+    width: 350px;
+    line-height: 35px;
+    text-align: start;
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+.box-1 .text {
+    margin: 18px auto 53px;
+    font-size: 24px;
+    width: 300px;
+    max-width: 350px;
+    line-height: 35px;
+    text-align: center;
+}
+span {
+    line-height: 27.2px;
+    font-size: 16px;
+    visibility: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    box-sizing: border-box;
+    position: absolute;
+    top: 85%;
+}
+
+.img-card {
+    /* visibility: hidden;
+    opacity: 0;
+    z-index: -1; */
+    position: absolute;
+    width: 100px;
+    transition: all .5s ease;
+    bottom: 0;
+    right: -100px;
+
+}
+.img-card img {
+    width: 100%;
+    height: 99.3px;
+    cursor: pointer;
+    color: inherit;
+    box-sizing: border-box;
+}
+.flex-box:hover .img-card, .effects {
+    /* visibility: visible;
+    opacity: 1;
+    z-index: 1; */
+    position: absolute;
+    right: 20px;
+    transform: translate(-70px, -61px) scale(2.5, 2.4);
+    animation: unset;
+}
+
+@keyframes secondImageUpDown {
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.ways-to-invest {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100vw;
+    height: auto;
+    margin-top: 80px;
+    padding: 160px 14px;
+}
+.ways-to-invest-heading, .saver-of-the-month-heading {
+    width: 100%;
+    height: auto;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 56px;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+.ways-to-invest-text, .saver-of-the-month-text {
+    margin: 18px auto 53px;
+    font-size: 24px;
+    width: 100%;
+    line-height: 35px;
+    text-align: center;
+}
+.title-white {
+    color: white;
+    margin-top: 0;
+}
+.text-white {
+    color: white;
+    text-align: start;
+    width: 300px;
+    margin-top: 1.2rem;
+}
+.returns-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #7913e5;
+    width: 100vw;
+    max-width: 1165px;
+    padding: 3rem 3rem;
+    border-radius: 1.6rem;
+    position: relative;
+
+    .myinvestments {
+        margin-bottom: 0px;
+    }
+}
+
+.myinvestments img {
+    width: 450px;
+    transform: translateY(51px);
+}
+
+.saver-of-the-month {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 160px;
+    padding-bottom: 64px;
+}
+.saver-of-the-month-text {
+    max-width: 1165px;
+}
+.saver-youtube {
+    max-width: 1165px;
+    width: 100%;
+    margin: 0 auto;
+}
+.saver-youtube iframe {
+    object-fit: cover;
+    width: 100%;
+    max-width: 1165px;
+    height: 500px;
+    border: 10px solid #fff;
+    border-radius: 24px;
+    min-height: 465px;
+    margin-bottom: 2rem;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 100px;
+    align-items: center;
+}
+.join-us {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1165px;
+    margin-inline: auto;
+}
+.fallback {
+    width: 550px;
+    height: auto;
+}
+.fallback img {
+    width: 450px;
+}
+.fallback-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    max-width: 500px;
+}
+.fallback-heading {
+    height: auto;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 56px;
+    letter-spacing: -0.03em;
+    text-align: start;
+    margin-bottom: 1rem;
+}
+.apple-store-outlined, .play-store-outlined {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: black ;
+}
+
+/* This is the footer section of the page */
+
+.footer {
+    width: 100vw;
+    height: auto;
+    background: linear-gradient(to top, white, white, white, #f2f7f8);
+}
+.top-part-of-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+   
+}
+.top-part-of-footer .big-text {
+    margin-bottom: 0;
+}
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    max-width: 1200px;
+    margin-bottom: 100px;
+
+}
+.brands a {
+    width: 160px;
+    max-height: 100px;
+    flex-basis: 16px;
+}
+.brands a img {
+    width: 160px;
+    height: auto;
+}
+.bottom-part-of-the-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1165px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+   
+}
+.bottom-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+    flex: 0 0 20%;
+}
+.bottom-one .footer-logo {
+    width: 180px;
+    margin-top: 10px;
+}
+.bottom-one .ndpr-emblem {
+    width: 140px;
+    height: auto;
+}
+.bottom-two, .bottom-three, .bottom-four {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    row-gap: 4px;
+    flex: 0 0 17%;
+}
+.bottom-four {
+    flex: 0 0 20%;
+}
+.footer-big-text {
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.bottom-part-of-the-footer p {
+    font-size: 14px;
+    line-height: 22.08px;
+}
+
+.bottom-five {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    flex-basis: 25%;
+    min-width: 250px;
+}
+.bottom-five-icons {
+    margin-bottom: 1rem;
+}
+.bottom-five a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+.bottom-five p {
+    text-align: right;
+    max-width: 300px;
+    margin-bottom: 8px;
+}
+.bottom-bar {
+    border: 1px solid rgb(243, 237, 237);
+    align-items: center;
+    width: 100vw;
+    max-width: 1200px;
+    margin-top: 60px;
+  }
+.final-foot {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.final-foot p {
+    color: grey;
+    margin-top: 0.5rem;
+    font-size: 14px;
+    letter-spacing: 0.03rem;
+    width: 80%;
+}
+  

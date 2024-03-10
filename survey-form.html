@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey-form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url(survey-form-background.jpeg);
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            margin: 0;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5));
+            z-index: -1; /* Ensure the pseudo-element is behind the content */
+        }
+        h1, p {
+            text-align: center;
+            margin: 30px 0;
+        }
+        p {
+            font-style: italic;
+            letter-spacing: 0.05rem;
+            font-weight: 300;
+        }
+        form {
+            background-color: rgb(26, 29, 84);
+            min-width: 300px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        fieldset {
+            border: none;
+            font-size: 1.125rem;
+        }
+        fieldset p {
+            margin: 10px 0;
+            text-align: unset;
+        }
+        span {
+            font-size: 0.8rem;
+        }
+        select {
+            color: grey;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 8px;
+        }
+        .first-field input {
+            margin: 10px 0 30px 0;
+        }
+        .field-radio {
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0;
+        }
+        .inline input {
+            display: inline;
+            width: unset;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">
+        freeCodeCamp Survey Form
+    </h1>
+    <p id="description">
+        Thank you for taking the time to help us improve the platform
+    </p>
+
+    <form action="" id="survey-form">
+        <fieldset class="first-field">
+            <label id="name-label">
+                Name
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </label>
+            <label id="email-label">
+                Email
+                <input type="email" name="" id="email" placeholder="Enter your Email" required>
+            </label>
+            <label id="number-label">
+               Age <span>(optional)</span>
+                <input type="number" name="" id="number" min="10" max="99" placeholder="Age">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <label for="role"> 
+                <p>Which option option best describes your Current role??</p>
+                <Select id="dropdown">
+                    <option value="">Select current role</option>
+                    <option value="student">Student</option>
+                    <option value="full-job">Full time job</option>
+                    <option value="full-learner"> Full time learner</option>
+                    <option value="mute">Prefer not to say</option>
+                    <option value="others">Others</option>
+                </Select>
+            </label>
+        </fieldset>
+
+        <fieldset class="field-radio">
+            <p>Would you recommend freeCodeCamp to a friend?</p>
+            <label for="recommend" class="inline">
+                <input type="radio" name="recommend" id="recommend" value="definitely" checked>
+                Definitely
+            </label>
+            <label for="recommend" class="inline">
+                <input type="radio" name="recommend" id="recommend" value="maybe">
+                Maybe
+            </label>
+            <label for="recommend" class="inline">
+                <input type="radio" name="recommend" id="recommend" value="not-sure">
+                Not Sure
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="favourite">
+                <p>What is your favorite feature of freeCodeCamp?</p>
+                <select name="" id="dropdown">
+                    <option value="">Select an option</option>
+                    <option value="challenges">Challenges</option>
+                    <option value="projects">Projects</option>
+                    <option value="community">Community</option>
+                    <option value="open-source">Open Source</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset class="field-radio">
+            <p>
+                What would You like to see improved? <span>(check all that apply) </span>
+            </p>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Front-end  Projects
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Back-end Projects
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Data Visualization
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Challenges
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Open Source Community
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Gitter help rooms
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Videos
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > City Meetups
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Wiki
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Forum
+            </label>
+            <label for="Front-end" class="inline" >
+                <input type="checkbox" value="Front-end" > Additional Courses
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="suggestions">
+                <p>Any comments or suggestions</p> 
+                <textarea name="suggestions" id="suggestions" cols="100" rows="5" placeholder="Enter your comment here..."></textarea>
+            </label>
+        </fieldset>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
